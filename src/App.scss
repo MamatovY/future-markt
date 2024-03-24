@@ -1,0 +1,24 @@
+@import './assets/fonts/raleway/raleway.css';
+@import './assets/fonts/montserrat/montserrat.css';
+
+.App {
+  text-align: center;
+  background-image: url('assets/img/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: #FFF;
+}
+
+h1 {
+  font-family: 'Raleway';
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 65px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

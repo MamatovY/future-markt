@@ -1,0 +1,33 @@
+@font-face {
+	font-family: 'Raleway';
+	src: url('raleway_regular.eot');
+	/* IE 9 Compatibility Mode */
+	src: url('raleway_regular.eot?#iefix') format('embedded-opentype'),
+		/* IE < 9 */
+		url('raleway_regular.woff2') format('woff2'),
+		/* Super Modern Browsers */
+		url('raleway_regular.woff') format('woff'),
+		/* Firefox >= 3.6, any other modern browser */
+		url('raleway_regular.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+		url('raleway_regular.svg#raleway_regular') format('svg');
+	/* Chrome < 4, Legacy iOS */
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('raleway_semibold.eot');
+	/* IE 9 Compatibility Mode */
+	src: url('raleway_semibold.eot?#iefix') format('embedded-opentype'),
+		/* IE < 9 */
+		url('raleway_semibold.woff2') format('woff2'),
+		/* Super Modern Browsers */
+		url('raleway_semibold.woff') format('woff'),
+		/* Firefox >= 3.6, any other modern browser */
+		url('raleway_semibold.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+		url('raleway_semibold.svg#raleway_semibold') format('svg');
+	/* Chrome < 4, Legacy iOS */
+	font-weight: 600;
+}
