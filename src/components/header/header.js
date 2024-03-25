@@ -12,9 +12,9 @@ const Header = () => {
             </div>
             <Nav />
             <div className={style.phone}>
-                <div className={style.burger}>
+                <button type='button' className={style.burger}>
                     <MenuIcon />
-                </div>
+                </button>
                 <a href="/">
                     <PhoneIcon />
                 </a>
