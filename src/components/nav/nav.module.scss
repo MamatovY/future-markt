@@ -1,0 +1,25 @@
+.nav {
+
+
+    a {
+        margin-left: 30px;
+    }
+
+    font-size: 14px;
+
+    @media (max-width:1080px) {
+        a {
+            margin-left: 10px;
+        }
+    }
+
+    @media(max-width:768px) {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+            display: none;
+        }
+    }
+
+}

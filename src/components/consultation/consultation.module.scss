@@ -1,0 +1,125 @@
+@import 'assets/scss/mixin.scss';
+
+.consultation {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 112px;
+
+    @media (max-width:1024px) {
+        gap: 20px;
+
+    }
+
+    @media(max-width:900px) {
+        display: grid;
+        margin-bottom: 92px;
+    }
+}
+
+.buttonWhite,
+.buttonOutline {
+    display: flex;
+
+    div {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 25px;
+        border: 1px solid #FFF;
+    }
+
+    a {
+        display: flex;
+        align-items: flex-end;
+        padding: 13px;
+        border: 1px solid #FFF;
+
+        svg {
+            margin-left: 22px;
+        }
+    }
+
+    @media (max-width:1024px) {
+        div {
+            font-size: 16px;
+            padding: 18px;
+        }
+
+        a {
+            padding: 10px;
+
+            svg {
+                width: 18px;
+                height: 18px;
+                margin-left: 18px;
+            }
+        }
+    }
+
+    @media(max-width:900px) {
+        div {
+            width: 260px;
+            text-align: center;
+        }
+    }
+
+    @media(max-width:600px) {
+        div {
+            padding: 10px;
+            width: 200px;
+        }
+
+        a {
+            padding: 8px;
+
+            svg {
+                width: 16px;
+                height: 16px;
+                margin-left: 16px;
+            }
+        }
+    }
+
+    @media(max-width:460px) {
+        div {
+            width: 160px;
+            font-size: 14px;
+            padding: 8px;
+        }
+    }
+
+    @media(max-width:400px) {
+        div {
+            width: 120px;
+            font-size: 10px;
+            padding: 8px;
+        }
+
+        a {
+            svg {
+                width: 12px;
+                height: 12px;
+                margin-left: 12px;
+            }
+        }
+    }
+}
+
+.buttonWhite {
+    div {
+        background: #fff;
+        color: $color2;
+        border: none;
+        border-right: 2px solid $color2;
+    }
+
+    a {
+        background: #FFF;
+        border: none;
+
+        svg path {
+            stroke: $color2;
+        }
+    }
+}

@@ -1,24 +1,138 @@
 @import './assets/fonts/raleway/raleway.css';
 @import './assets/fonts/montserrat/montserrat.css';
+@import './assets/scss/mixin.scss';
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
 .App {
-  text-align: center;
   background-image: url('assets/img/bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
   color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 43px;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 20px;
+  }
 }
 
+
+.mentor {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  // right: -96px;
+  right: 211px;
+  @include adaptive-value('width', 525, 275, 1);
+
+  @media (max-width:1600px) {
+    right: 100px;
+  }
+
+  @media (max-width:1440px) {
+    right: 0;
+  }
+
+  @media (max-width:1280px) {
+    right: -100px;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+
 h1 {
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 65px;
+
+  @media (max-width:1080px) {
+    font-size: 50px;
+  }
+
+  @media (max-width:600px) {
+    font-size: 40px;
+  }
+
+  @media (max-width:425px) {
+    font-size: 30px;
+  }
+
+  @media (max-width:360px) {
+    font-size: 25px;
+  }
+
+}
+
+h2 {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 50px;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+
+  @media (max-width:1024px) {
+    font-size: 30px;
+  }
+
+  @media (max-width:550px) {
+    font-size: 20px;
+  }
+
+  @media (max-width:425px) {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1320px;
+  }
 }

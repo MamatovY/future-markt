@@ -10,6 +10,7 @@ const Consultation = () => {
                 </div>
                 <a href="/">
                     <ArrowIcon />
+
                 </a>
             </div>
 
