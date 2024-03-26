@@ -1,8 +1,17 @@
+import { useEffect, useState } from 'react';
 import style from './access.module.scss'
 import { motion } from "framer-motion"
 
 const Access = () => {
-    return (
+
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        setUser(user);
+    }, []);
+
+    return user && (
         <>
             <motion.div
                 initial={{ y: 100 }}
@@ -15,6 +24,15 @@ const Access = () => {
                 <h3>
                     Я обязательно свяжусь с вами в ближайшее время.
                 </h3>
+                <div>
+                    Имя: {user.name}
+                </div>
+                <div>
+                    Номер: {user.number}
+                </div>
+                <div>
+                    Согласие: {user.agree ? 'Да' : 'Нет'}
+                </div>
 
             </motion.div>
             <div className={style.logo}>
