@@ -29,11 +29,12 @@
         border: 1px solid #FFF;
     }
 
-    button {
+    span {
         display: flex;
         align-items: flex-end;
         padding: 13px;
         border: 1px solid #FFF;
+        color: #FFF;
 
         svg {
             margin-left: 22px;
@@ -46,7 +47,7 @@
             padding: 18px;
         }
 
-        button {
+        span {
             padding: 10px;
 
             svg {
@@ -70,7 +71,7 @@
             width: 200px;
         }
 
-        button {
+        span {
             padding: 8px;
 
             svg {
@@ -96,7 +97,7 @@
             padding: 8px;
         }
 
-        button {
+        span {
             svg {
                 width: 12px;
                 height: 12px;
@@ -114,7 +115,7 @@
         border-right: 2px solid $color2;
     }
 
-    button {
+    span {
         background: #FFF;
         border: none;
 

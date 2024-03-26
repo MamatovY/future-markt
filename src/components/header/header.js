@@ -6,7 +6,7 @@ import { ReactComponent as MenuIcon } from 'assets/img/menu.svg'
 const Header = () => {
 
     return (
-        <div className={style.header}>
+        <header className={style.header}>
             <div className={style.logo}>
                 ALEX. SHEVTSOV
             </div>
@@ -22,7 +22,7 @@ const Header = () => {
                     8-345-123-34-45
                 </span>
             </div>
-        </div>
+        </header>
     )
 }
 

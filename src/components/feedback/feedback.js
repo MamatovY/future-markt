@@ -1,38 +1,18 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 
 import style from './feedback.module.scss'
 
-import { ReactComponent as CheckIcon } from 'assets/img/check.svg'
-import { ReactComponent as ArrowIcon } from 'assets/img/arrow.svg'
+
 import { ReactComponent as CrossIcon } from 'assets/img/cross.svg'
+import Form from 'components/form'
+import Access from 'components/access'
 
 const Feedback = ({ activeForm, setActiveForm }) => {
-    const [name, setName] = useState('')
-    const [number, setNumber] = useState('')
-    const [checkActive, setCheckActive] = useState(false)
-    const [errorMsg, setErrorMsg] = useState(false)
     const [fetch, setFetch] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-    const checkboxRef = useRef(null);
-
-    const handleBoxClick = () => {
-        setCheckActive(!checkActive);
-        if (checkboxRef.current) {
-            checkboxRef.current.click();
-        }
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (name && number && checkActive) {
-            console.log('true');
-            setFetch(true);
-            setErrorMsg(false)
-        } else {
-            setErrorMsg(true);
-        }
-    }
+    console.log(fetch);
 
     return (
         <>
@@ -62,57 +42,55 @@ const Feedback = ({ activeForm, setActiveForm }) => {
                             exit={{ x: -100 }}
                             className={style.popup}>
 
-                            <div className={style.form}>
-                                <h2 className={style.title}>
-                                    Закажите обратный звонок
-                                </h2>
-                                <form onSubmit={handleSubmit}>
-                                    <input type="text"
-                                        value={name}
-                                        onChange={e => setName(e.target.value)}
-                                        className={style.input}
-                                        name='name'
-                                        placeholder='Александр' />
-                                    <div className={style.error}>
-                                        {errorMsg}
-                                    </div>
+                            {loading ?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                    style={{ margin: 'auto', background: 'none', display: 'block', shapeRendering: 'auto' }}
+                                    width="200px"
+                                    height="200px"
+                                    viewBox="0 0 100 100"
+                                    preserveAspectRatio="xMidYMid"
+                                >
+                                    <g transform="rotate(0 50 50)">
+                                        <circle
+                                            cx="50"
+                                            cy="50"
+                                            r="32"
+                                            fill="none"
+                                            stroke="#ffffff"
+                                            strokeWidth="8"
+                                            strokeDasharray="50.26548245743669 50.26548245743669"
+                                            transform="rotate(272.317 50 50)"
+                                        >
+                                            <animateTransform
+                                                attributeName="transform"
+                                                type="rotate"
+                                                repeatCount="indefinite"
+                                                dur="1s"
+                                                keyTimes="0;1"
+                                                values="0 50 50;360 50 50"
+                                            />
+                                        </circle>
+                                    </g>
+                                </svg>
+                                :
+                                fetch ?
+                                    <Access />
+                                    :
+                                    <Form setLoading={setLoading} setFetch={setFetch} />
+                            }
 
-                                    <input type="text"
-                                        value={number}
-                                        onChange={e => setNumber(e.target.value)}
-                                        className={style.input}
-                                        name='number'
-                                        placeholder='+79324564321' />
+                            <button className={style.close} onClick={() => {
+                                setFetch(false)
+                                setActiveForm(false)
+                            }}><CrossIcon /></button>
 
-                                    <div className={style.faq}>
-                                        <input type="checkbox" id="agreeCheckbox"
-                                            ref={checkboxRef}
-                                            className={style.checkbox} />
 
-                                        <div className={style.box}
-                                            onClick={() => handleBoxClick()}>
-                                            {checkActive && <CheckIcon />}
-                                        </div>
-                                        <label onClick={() => setCheckActive(!checkActive)} htmlFor="agreeCheckbox" className={style.label} >Согласен на сохранение и обработку персональных данных</label>
-                                    </div>
-
-                                    <div className={style.submit}>
-                                        <div>
-                                            Заказать обратный звонок
-                                        </div>
-                                        <button type='submit'>
-                                            <ArrowIcon />
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                            <button className={style.close} onClick={() => setActiveForm(false)}><CrossIcon /></button>
-
-                            {errorMsg && <div className={style.error}>
-                                Заполните все поля и дайте согласие
-                            </div>}
 
                         </motion.div>
+
+
                     </motion.div>
                 }
             </AnimatePresence>
